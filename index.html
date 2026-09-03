@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BECCO — Professional Cleaning Services, Abu Dhabi</title>
+<meta name="description" content="Professional residential and commercial cleaning in Abu Dhabi. Trained staff, eco-friendly methods, reliable service. Book via WhatsApp, Instagram, or phone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue: #215496;
+    --blue-deep: #163a6b;
+    --blue-tint: #E4ECF5;
+    --blue-tint-2: #EEF3F9;
+    --grey-bg: #F5F7FA;
+    --ink: #1B222B;
+    --ink-soft: #4B5563;
+    --white: #FFFFFF;
+    --line: #E2E7EE;
+    --radius: 14px;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: inherit; text-decoration: none; }
+  h1,h2,h3{ font-family: var(--serif); font-weight: 500; margin: 0; color: var(--ink); }
+  p{ margin: 0; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  @media (max-width: 640px){ .wrap{ padding: 0 20px; } }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+    white-space: nowrap;
+  }
+  .btn:focus-visible{ outline: 2px solid var(--blue-deep); outline-offset: 3px; }
+  .btn-primary{ background: var(--blue); color: var(--white); }
+  .btn-primary:hover{ background: var(--blue-deep); }
+  .btn-ghost{ background: transparent; color: var(--blue); border-color: var(--blue); }
+  .btn-ghost:hover{ background: var(--blue-tint); }
+  .btn-ghost-light{ background: transparent; color: var(--white); border-color: rgba(255,255,255,.55); }
+  .btn-ghost-light:hover{ background: rgba(255,255,255,.12); }
+  .btn-text{ background:none; color: var(--blue); font-weight:600; padding: 8px 0; }
+  .btn-text:hover{ color: var(--blue-deep); }
+
+  .icon{ width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* ---------- Header ---------- */
+  header{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content: space-between;
+    height: 76px;
+  }
+  .logo{
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--blue-deep);
+  }
+  .logo span{ color: var(--ink-soft); font-family: var(--sans); font-weight: 500; font-size: 13px; display:block; margin-top: 1px; }
+  .nav-links{ display:flex; align-items:center; gap: 34px; }
+  .nav-links a{ font-size: 15px; color: var(--ink-soft); font-weight: 500; transition: color .15s ease; }
+  .nav-links a:hover{ color: var(--blue); }
+  .nav-cta{ display:flex; align-items:center; gap: 12px; }
+  .nav-menu-btn{ display:none; }
+
+  @media (max-width: 900px){
+    .nav-links{ display:none; }
+    .nav-cta .btn-ghost{ display:none; }
+  }
+  @media (max-width: 480px){
+    .nav-cta .btn{ padding: 11px 18px; font-size: 14px; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 76px 0 96px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-badge{
+    display:inline-flex; align-items:center; gap: 9px;
+    padding: 9px 16px 9px 12px;
+    border-radius: 999px;
+    background: var(--blue-tint);
+    color: var(--blue-deep);
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 26px;
+  }
+  .hero-badge .dot{ width:7px; height:7px; border-radius:50%; background: var(--blue); flex-shrink:0; }
+  .hero h1{
+    font-size: 52px;
+    line-height: 1.09;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+    max-width: 620px;
+  }
+  .hero p.sub{
+    margin-top: 22px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 460px;
+  }
+  .hero-ctas{
+    margin-top: 34px;
+    display:flex; flex-wrap: wrap; gap: 12px;
+  }
+  .hero-visual{
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: linear-gradient(160deg, var(--blue-tint) 0%, var(--grey-bg) 100%);
+    box-shadow: 0 30px 60px -25px rgba(21,45,80,.28);
+  }
+  .hero-visual img{ width:100%; height:100%; object-fit: cover; }
+  .hero-visual-note{
+    position:absolute; left: 22px; bottom: 22px;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display:flex; align-items:center; gap: 12px;
+    max-width: 260px;
+    box-shadow: 0 10px 30px -12px rgba(21,45,80,.25);
+  }
+  .hero-visual-note .ring{
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--blue); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--serif); font-size: 16px; font-weight:600;
+    flex-shrink:0;
+  }
+  .hero-visual-note p{ font-size: 12.5px; line-height:1.4; color: var(--ink-soft); }
+  .hero-visual-note strong{ display:block; font-size: 13.5px; color: var(--ink); margin-bottom:1px; }
+
+  @media (max-width: 900px){
+    .hero{ padding: 48px 0 64px; }
+    .hero-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .hero h1{ font-size: 38px; max-width: 100%; }
+    .hero p.sub{ max-width: 100%; }
+    .hero-visual{ aspect-ratio: 16/11; }
+  }
+  @media (max-width: 480px){
+    .hero h1{ font-size: 32px; }
+    .hero-ctas .btn{ flex: 1 1 auto; }
+  }
+
+  /* ---------- Section basics ---------- */
+  section{ padding: 96px 0; }
+  @media (max-width: 640px){ section{ padding: 64px 0; } }
+  .section-grey{ background: var(--grey-bg); }
+  .section-head{ max-width: 620px; margin-bottom: 52px; }
+  .section-head h2{ font-size: 36px; line-height: 1.15; letter-spacing: -0.3px; }
+  .section-head p{ margin-top: 14px; font-size: 16.5px; color: var(--ink-soft); line-height: 1.6; }
+  @media (max-width: 640px){ .section-head h2{ font-size: 28px; } }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .about-photo{
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; }
+  .about-copy h2{ font-size: 34px; line-height: 1.18; letter-spacing: -0.3px; margin-bottom: 20px; }
+  .about-copy p{ font-size: 16.5px; color: var(--ink-soft); line-height: 1.7; }
+  .about-points{
+    margin-top: 30px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 28px;
+  }
+  .about-point{ display:flex; gap: 12px; align-items:flex-start; }
+  .about-point .check{
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--blue-tint); color: var(--blue);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; margin-top: 1px;
+  }
+  .about-point span{ font-size: 14.5px; color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 900px){
+    .about-grid{ grid-template-columns: 1fr; gap: 36px; }
+    .about-photo{ aspect-ratio: 16/9; }
+    .about-points{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .service-card{
+    background: var(--white);
+    padding: 30px 26px;
+    transition: background .18s ease;
+  }
+  .service-card:hover{ background: var(--blue-tint-2); }
+  .service-card .num{
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .service-card h3{ font-size: 18px; font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+  .service-card p{ font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+  /* ---------- Why choose ---------- */
+  .why-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 32px;
+  }
+  .why-item{ border-top: 2px solid var(--blue); padding-top: 20px; }
+  .why-item h3{ font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .why-item p{ font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; }
+  @media (max-width: 760px){ .why-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px){ .why-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- How it works ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .step{ position: relative; padding-right: 32px; }
+  .step:not(:last-child)::after{
+    content:'';
+    position:absolute; top: 25px; right: -0px; left: 62px;
+    height: 1px; background: var(--line);
+  }
+  .step-num{
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--blue); color: #fff;
+    font-family: var(--serif); font-size: 19px; font-weight: 600;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 22px; position: relative; z-index: 2;
+  }
+  .step h3{ font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .step p{ font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; max-width: 260px; }
+  @media (max-width: 760px){
+    .steps{ grid-template-columns: 1fr; gap: 34px; }
+    .step:not(:last-child)::after{ display:none; }
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .testi-card{
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    display:flex; flex-direction:column; gap: 16px;
+  }
+  .stars{ display:flex; gap: 3px; color: var(--blue); }
+  .stars svg{ width:15px; height:15px; }
+  .testi-card p.quote{ font-size: 14.5px; color: var(--ink); line-height: 1.6; flex:1; }
+  .testi-card .author{ font-size: 13px; color: var(--ink-soft); font-weight: 600; }
+  @media (max-width: 900px){ .testi-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px){ .testi-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background: var(--blue-deep);
+    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 100%);
+    border-radius: 26px;
+    padding: 64px 56px;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-band h2{ color: #fff; font-size: 34px; max-width: 560px; margin: 0 auto; line-height: 1.2; }
+  .cta-band p{ color: rgba(255,255,255,.85); margin-top: 14px; font-size: 16px; }
+  .cta-band .hero-ctas{ justify-content: center; margin-top: 30px; }
+  @media (max-width: 640px){
+    .cta-band{ padding: 48px 26px; border-radius: 20px; }
+    .cta-band h2{ font-size: 27px; }
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .contact-card{
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px;
+    display:flex; flex-direction:column; gap: 14px;
+    transition: border-color .18s ease, transform .18s ease;
+  }
+  .contact-card:hover{ border-color: var(--blue); transform: translateY(-2px); }
+  .contact-card .cico{
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--blue-tint); color: var(--blue);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .contact-card h3{ font-size: 16px; font-weight: 600; }
+  .contact-card .val{ font-size: 15px; color: var(--ink-soft); }
+  .contact-card .go{ font-size: 13.5px; font-weight: 600; color: var(--blue); margin-top: auto; }
+  @media (max-width: 760px){ .contact-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 40px 0;
+  }
+  .foot-row{
+    display:flex; align-items:center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  .foot-row .logo{ font-size: 19px; }
+  .foot-links{ display:flex; gap: 24px; }
+  .foot-links a{ font-size: 13.5px; color: var(--ink-soft); }
+  .foot-links a:hover{ color: var(--blue); }
+  .foot-copy{ font-size: 13px; color: #8b95a3; margin-top: 20px; }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .float-wa{
+    position: fixed; right: 22px; bottom: 22px; z-index: 60;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: var(--blue); color: #fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 12px 28px -8px rgba(21,45,80,.5);
+    transition: transform .18s ease, background .18s ease;
+  }
+  .float-wa:hover{ background: var(--blue-deep); transform: scale(1.06); }
+  .float-wa svg{ width: 26px; height: 26px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">BECCO<span>Cleaning Services · Abu Dhabi</span></a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#process">How It Works</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+971543626820" class="btn btn-ghost">Call Now</a>
+      <a href="https://wa.me/971543626820" class="btn btn-primary">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="dot"></span>
+          2-hour free trial for first-time customers — limited availability
+        </div>
+        <h1>Professional cleaning services you can trust in Abu Dhabi</h1>
+        <p class="sub">Reliable, eco-friendly, and detail-focused cleaning for homes and businesses — booked in minutes, delivered on time, every time.</p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/971543626820" class="btn btn-primary">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.15c-1.6 0-3.14-.43-4.48-1.24l-.32-.19-3.12.82.83-3.04-.21-.32a8.15 8.15 0 01-1.25-4.34c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.16 0 4.5-3.66 8.16-8.16 8.16h-.61z"/><path d="M9.34 7.4c-.18-.4-.37-.4-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03 0 1.19.87 2.35.99 2.51.12.16 1.68 2.68 4.14 3.65 2.04.8 2.46.65 2.9.6.44-.04 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.53-1.34-.76-1.83z"/></svg>
+            Book via WhatsApp
+          </a>
+          <a href="https://instagram.com/becco_llc" class="btn btn-ghost">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>
+            Message on Instagram
+          </a>
+          <a href="tel:+971543626820" class="btn btn-text">Or call 054 362 6820</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="A bright, spotless modern living room after a BECCO cleaning service">
+        <div class="hero-visual-note">
+          <div class="ring">98%</div>
+          <p><strong>Client satisfaction</strong>Based on repeat bookings across Abu Dhabi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section-grey">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=900&auto=format&fit=crop" alt="Professional cleaning staff member wiping down a kitchen surface">
+      </div>
+      <div class="about-copy">
+        <h2>A cleaning partner Abu Dhabi trusts, not just hires once</h2>
+        <p>BECCO is a professional cleaning company delivering high-quality residential and commercial cleaning across Abu Dhabi. We built our reputation on consistency — the same high standard, visit after visit, whether it's a single apartment or a full office floor.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span>Clean and hygienic environments</span>
+          </div>
+          <div class="about-point">
+            <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span>Professional, trained staff</span>
+          </div>
+          <div class="about-point">
+            <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span>Eco-friendly cleaning products</span>
+          </div>
+          <div class="about-point">
+            <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span>Reliable, consistent delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cleaning services, done properly</h2>
+        <p>From a single room to a full construction handover — every service is carried out by trained staff using eco-friendly methods.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><div class="num">01</div><h3>Residential Cleaning</h3><p>Homes and apartments cleaned to a standard you'd be proud to walk into.</p></div>
+        <div class="service-card"><div class="num">02</div><h3>Commercial & Office</h3><p>Workspaces kept spotless without disrupting your working day.</p></div>
+        <div class="service-card"><div class="num">03</div><h3>Deep Cleaning</h3><p>A thorough, top-to-bottom clean for spaces that need real attention.</p></div>
+        <div class="service-card"><div class="num">04</div><h3>Move-in / Move-out</h3><p>Handover-ready cleaning for tenants, owners, and landlords.</p></div>
+        <div class="service-card"><div class="num">05</div><h3>Post-Construction</h3><p>Dust, debris, and residue cleared so the space is ready to use.</p></div>
+        <div class="service-card"><div class="num">06</div><h3>Window & Glass</h3><p>Streak-free glass and windows, inside and out.</p></div>
+        <div class="service-card"><div class="num">07</div><h3>Carpet Cleaning</h3><p>Deep extraction cleaning that lifts embedded dirt and odours.</p></div>
+        <div class="service-card"><div class="num">08</div><h3>Sofa & Mattress</h3><p>Upholstery cleaned safely, restoring freshness and hygiene.</p></div>
+        <div class="service-card"><div class="num">09</div><h3>Kitchen Degreasing</h3><p>Built-up grease removed from surfaces, hoods, and equipment.</p></div>
+        <div class="service-card"><div class="num">10</div><h3>Bathroom Deep Clean</h3><p>Tiles, grout, and fixtures brought back to a hygienic shine.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section id="why" class="section-grey">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why Abu Dhabi chooses BECCO</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><h3>Trained, professional staff</h3><p>Every team member is trained and vetted before stepping into your space.</p></div>
+        <div class="why-item"><h3>Transparent pricing</h3><p>Affordable rates with no hidden costs or last-minute surprises.</p></div>
+        <div class="why-item"><h3>Eco-friendly products</h3><p>Cleaning solutions that are effective and safe for your family or staff.</p></div>
+        <div class="why-item"><h3>On-time, every time</h3><p>We show up when we say we will — reliability isn't optional.</p></div>
+        <div class="why-item"><h3>Guaranteed results</h3><p>If a spot's been missed, we'll come back and make it right.</p></div>
+        <div class="why-item"><h3>Customer-first focus</h3><p>Your satisfaction is the actual measure of a job well done.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Booking a clean takes three steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Get in touch</h3>
+          <p>Reach us via WhatsApp, Instagram, or a phone call — whichever is easiest for you.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Share the details</h3>
+          <p>Tell us your cleaning requirements and location so we can prepare the right team.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Enjoy a clean space</h3>
+          <p>We arrive on schedule, do the work properly, and leave your space spotless.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section-grey">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What our customers say</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Excellent service, very professional and clean results."</p>
+          <p class="author">Ahmed Tariq</p>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Very punctual and great deep cleaning work."</p>
+          <p class="author">Sarah Shiju</p>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Excellent office cleaning service, highly recommended."</p>
+          <p class="author">Steen Shinu</p>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Affordable, reliable, and high-quality service."</p>
+          <p class="author">Stesha Shinu</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Ready for a cleaner, healthier space?</h2>
+        <p>Contact BECCO today via WhatsApp, Instagram, or phone call.</p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/971543626820" class="btn btn-primary" style="background:#fff;color:var(--blue-deep);">WhatsApp Now</a>
+          <a href="https://instagram.com/becco_llc" class="btn btn-ghost-light">Message on Instagram</a>
+          <a href="tel:+971543626820" class="btn btn-ghost-light">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Reach us directly</h2>
+        <p>Every option below is one tap away — pick whichever suits you.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+971543626820" class="contact-card">
+          <div class="cico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <h3>Phone</h3>
+          <p class="val">054 362 6820</p>
+          <span class="go">Call now</span>
+        </a>
+        <a href="https://wa.me/971543626820" class="contact-card">
+          <div class="cico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.15c-1.6 0-3.14-.43-4.48-1.24l-.32-.19-3.12.82.83-3.04-.21-.32a8.15 8.15 0 01-1.25-4.34c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.16 0 4.5-3.66 8.16-8.16 8.16h-.61z"/></svg></div>
+          <h3>WhatsApp</h3>
+          <p class="val">054 362 6820</p>
+          <span class="go">Start a chat</span>
+        </a>
+        <a href="https://instagram.com/becco_llc" class="contact-card">
+          <div class="cico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Instagram</h3>
+          <p class="val">@becco_llc</p>
+          <span class="go">Send a DM</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="#top" class="logo">BECCO</a>
+      <div class="foot-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <p class="foot-copy">Bright Star Electromech and Contracting L.L.C · Abu Dhabi, UAE</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/971543626820" class="float-wa" aria-label="Message us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.15c-1.6 0-3.14-.43-4.48-1.24l-.32-.19-3.12.82.83-3.04-.21-.32a8.15 8.15 0 01-1.25-4.34c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.16 0 4.5-3.66 8.16-8.16 8.16h-.61z"/><path d="M9.34 7.4c-.18-.4-.37-.4-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03 0 1.19.87 2.35.99 2.51.12.16 1.68 2.68 4.14 3.65 2.04.8 2.46.65 2.9.6.44-.04 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.53-1.34-.76-1.83z"/></svg>
+</a>
+
+</body>
+</html>
